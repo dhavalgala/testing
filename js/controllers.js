@@ -68,7 +68,17 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ProfileShareCtrl', function ($scope, MyServices) {
-    $scope.contacts = MyServices.all();
+    var contactCallback = function (contacts) {
+        if (!otp) {
+            conole.log("No Contacts");
+        } else {
+            $scope.contacts = contacts;
+            $scope.$apply();
+            console.log($scope.contacts);
+        }
+    };
+    MyServices.all(contactCallback);
+//    $scope.contacts = MyServices.all();
     console.log($scope.contacts);
 })
 

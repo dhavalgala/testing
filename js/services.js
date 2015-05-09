@@ -54,17 +54,19 @@ angular.module('starter.services', [])
     }];
 
     var returnfunction = {};
-    returnfunction.all = function () {
+    returnfunction.all = function (callback) {
 
         var contacts1 = "";
         var onSuccess = function (contacts) {
             alert('Found ' + contacts.length + ' contacts.');
             contacts1 = contacts;
-            console.log(contacts1);
+//            console.log(contacts1);
+            callback(contacts1);
         };
 
         var onError = function (contactError) {
             alert('onError!');
+            callback();
         };
 
         // find all contacts with 'Bob' in any name field
@@ -74,7 +76,7 @@ angular.module('starter.services', [])
         //        options.desiredFields = [navigator.contacts.fieldType.id];
         var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.phoneNumbers, navigator.contacts.fieldType.emails, navigator.contacts.fieldType.organizations, navigator.contacts.fieldType.photos];
         navigator.contacts.find(fields, onSuccess, onError, options);
-        return contacts1;
+        
     };
     returnfunction.get = function (Id) {
         for (var i = 0; i < contacts.length; i++) {
