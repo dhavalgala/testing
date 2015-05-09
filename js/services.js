@@ -43,6 +43,17 @@ angular.module('starter.services', [])
         designation: 'Director'
     }, {
         id: 4,
+        name: 'Dhaval Gala',
+        company: 'Wohlig Technology',
+        area: 'Mumbai',
+        image: 'https://scontent-ams.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/p720x720/541636_822641337807747_309034386107930878_n.jpg?oh=62a403812a195c07849b0a3246c534df&oe=55C4B9E9',
+        logo: 'http://upload.wikimedia.org/wikipedia/en/3/31/Red_Chillies.JPG',
+        number: '+919029145077',
+        email: 'dhavalwohlig@gmail.com',
+        designation: 'App Developer'
+    },
+        {
+        id: 5,
         name: 'Nilesh Halde',
         company: 'Roots2Wings Ideas',
         area: 'Mumbai',
@@ -54,28 +65,29 @@ angular.module('starter.services', [])
     }];
 
     var returnfunction = {};
-    returnfunction.all = function (callback) {
+    returnfunction.all = function () {
 
-        var contacts1 = "";
-        var onSuccess = function (contacts) {
-            alert('Found ' + contacts.length + ' contacts.');
-            contacts1 = contacts;
+//        var contacts1 = "";
+//        var onSuccess = function (contacts) {
+//            alert('Found ' + contacts.length + ' contacts.');
+//            contacts1 = contacts;
 //            console.log(contacts1);
-            callback(contacts1);
-        };
-
-        var onError = function (contactError) {
-            alert('onError!');
-            callback();
-        };
-
-        // find all contacts with 'Bob' in any name field
-        var options = new ContactFindOptions();
-        //        options.filter = "A";
-        options.multiple = true;
-        //        options.desiredFields = [navigator.contacts.fieldType.id];
-        var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.phoneNumbers, navigator.contacts.fieldType.emails, navigator.contacts.fieldType.organizations, navigator.contacts.fieldType.photos];
-        navigator.contacts.find(fields, onSuccess, onError, options);
+//            callback(contacts1);
+//        };
+//
+//        var onError = function (contactError) {
+//            alert('onError!');
+//            callback();
+//        };
+//
+//        // find all contacts with 'Bob' in any name field
+//        var options = new ContactFindOptions();
+//        //        options.filter = "A";
+//        options.multiple = true;
+//        //        options.desiredFields = [navigator.contacts.fieldType.id];
+//        var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.phoneNumbers, navigator.contacts.fieldType.emails, navigator.contacts.fieldType.organizations, navigator.contacts.fieldType.photos];
+//        navigator.contacts.find(fields, onSuccess, onError, options);
+        return contacts;
         
     };
     returnfunction.get = function (Id) {

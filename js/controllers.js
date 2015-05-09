@@ -68,18 +68,18 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ProfileShareCtrl', function ($scope, MyServices) {
-    var contactCallback = function (contacts) {
-        if (!contacts) {
-            conole.log("No Contacts");
-        } else {
-            $scope.contacts = contacts;
-            $scope.$apply();
-            console.log($scope.contacts);
-        }
-    };
-    MyServices.all(contactCallback);
+//    var contactCallback = function (contacts) {
+//        if (!contacts) {
+//            conole.log("No Contacts");
+//        } else {
+//            $scope.contacts = contacts;
+//            $scope.$apply();
+//            console.log($scope.contacts);
+//        }
+//    };
+    $scope.contacts=MyServices.all();
 //    $scope.contacts = MyServices.all();
-    console.log($scope.contacts);
+//    console.log($scope.contacts);
 })
 
 .controller('ProfileGetCtrl', function ($scope, MyServices) {
