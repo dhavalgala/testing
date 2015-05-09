@@ -69,7 +69,7 @@ angular.module('starter.controllers', [])
 
 .controller('ProfileShareCtrl', function ($scope, MyServices) {
     var contactCallback = function (contacts) {
-        if (!otp) {
+        if (!contacts) {
             conole.log("No Contacts");
         } else {
             $scope.contacts = contacts;
